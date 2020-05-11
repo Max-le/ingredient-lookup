@@ -5,8 +5,11 @@ const matchList = document.getElementById('match-list')
 //Creates an event that will be triggered every keystroke on the search element 
 search.addEventListener('input', () => {
     if (search.value.length > 2){
-    searchIngredients(search.value)}
-        })
+        searchIngredients(search.value)
+    }
+    else {
+        matchList.innerHTML = "";//Hide the list
+        }})
 
 //fetch() returns a promise, so I label the function with 'async'
 const searchIngredients = async query => {
